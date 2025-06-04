@@ -13,6 +13,11 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        'react-dom/server.browser': 'react-dom/server', // Fix MessageChannel issue
+      },
+    },
   },
   output: "server",
   adapter: cloudflare({
