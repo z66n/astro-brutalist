@@ -7,13 +7,30 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "astro build",
     "dev": "astro dev --port $PORT",
-    "preview": "astro preview",
     "start": "astro dev",
-    "format": "biome format --write ."
+    "format": "biome format --write .",
+    "astro": "astro",
+    "build": "astro build",
+    "cf-typegen": "wrangler types",
+    "check": "astro build && tsc && wrangler deploy --dry-run",
+    "deploy": "wrangler deploy",
+    "preview": "astro build && wrangler dev"
+  },
+  "cloudflare": {
+    "label": "Astro Framework Starter",
+    "products": [
+      "Workers"
+    ],
+    "categories": [],
+    "icon_urls": [
+      "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/5ca0ca32-e897-4699-d4c1-6b680512f000/public"
+    ],
+    "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/33bbbf02-eda2-4d3f-b244-c27a280f3900/public",
+    "publish": true
   },
   "dependencies": {
+    "@astrojs/cloudflare": "12.5.0",
     "@astrojs/react": "^4.3.0",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-slot": "^1.2.3",
@@ -33,7 +50,9 @@
     "@types/node": "^22.15.29",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wrangler": "4.16.1"
   },
+  "type": "module",
   "packageManager": "pnpm@10.11.1"
 }
