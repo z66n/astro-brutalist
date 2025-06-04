@@ -16,6 +16,8 @@ export default defineConfig({
     resolve: {
       alias: {
         'react-dom/server.browser': 'react-dom/server', // Fix MessageChannel issue
+        'react-dom/server.node': 'react-dom/server', // <-- ADD THIS TOO
+        'react-dom/server': 'react-dom/server',       // <-- REINFORCE fallback
       },
     },
   },
