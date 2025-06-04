@@ -1,0 +1,77 @@
+---
+// src/components/BrutalistContent.astro
+const { variant = "brutalist" } = Astro.props;
+const isPolished = variant === "polished";
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<h1 class={isPolished ? "text-4xl font-bold tracking-tight" : ""}>
+  Enter the main heading, usually the same as the title.
+</h1>
+
+<p>Be <b>bold</b> in stating your key points. Put them in a list:</p>
+
+<ul class={isPolished ? "list-disc list-inside space-y-1" : ""}>
+  <li>The first item in your list</li>
+  <li>The second item; <i>italicize</i> key words</li>
+</ul>
+
+<p>Improve your image by including an image:</p>
+<p>
+  <img
+    src="https://i.imgur.com/SEBww.jpg"
+    alt="A Great HTML Resource"
+    class={isPolished ? "w-full max-w-md border rounded" : ""}
+  />
+</p>
+
+<div class={isPolished ? "mt-6 p-4 border-4 font-mono rounded" : "brutalist-ad"}>
+  <strong>ADVERTISEMENT:</strong>
+  <p>
+    Buy our imaginary product. It does nothing, costs a lot, and makes your life marginally worse.<br />
+  </p>
+  <a href="#" class={isPolished ? "underline hover:text-red-400" : ""}>Learn less →</a>
+</div>
+
+<p>
+  Add a link to your favorite
+  <a
+    href="https://www.dummies.com/"
+    class={isPolished ? "font-medium underline underline-offset-4" : ""}
+  >Web site</a>.
+</p>
+
+<hr class={isPolished ? "my-4" : ""} />
+
+<h2 class={isPolished ? "text-xl font-semibold" : ""}>Join the Fake Mailing List</h2>
+<form id="fake-form" class={isPolished ? "space-y-2 w-full max-w-md border p-4 rounded" : ""}>
+  <label for="email" class={isPolished ? "block text-sm font-medium" : ""}>Email address:</label>
+  <input
+    type="email"
+    id="email"
+    placeholder="you@example.com"
+    class={isPolished ? "w-full border px-3 py-2 rounded" : ""}
+  /><br />
+  <button type="submit" class={buttonVariants({ className: isPolished ? "" : "" })}>
+    Submit
+  </button>
+</form>
+
+<script is:inline>
+  document.getElementById("fake-form")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+</script>
+
+<p>
+  Finally, link to
+  <a
+    href="page2.html"
+    class={isPolished ? "font-medium underline underline-offset-4" : ""}
+  >another page</a>
+  in your own Web site.
+</p>
+
+<p class={isPolished ? "text-sm text-muted-foreground" : ""}>
+  © Wiley Publishing, 2011
+</p>

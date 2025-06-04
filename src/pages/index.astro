@@ -1,42 +1,19 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
+import Content from "@/components/Content.astro";
 ---
 
 <BaseLayout
-  title="Astro Shadcn UI Template"
-  description="This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI."
+  title="Fasad"
+  description="A polished Astro site built with Shadcn UI."
 >
   <section class="container grid items-center gap-6 pt-6 pb-8 md:py-10">
-    <div class="flex max-w-[980px] flex-col items-start gap-2">
-      <h1
-        class="text-3xl leading-tight font-extrabold tracking-tighter md:text-4xl"
-      >
-        Astro Shadcn UI Template <br class="hidden sm:inline" />
-        built with Radix UI and Tailwind CSS.
-      </h1>
-      <p class="text-muted-foreground max-w-[700px] text-lg">
-        Accessible and customizable components that you can copy and paste into
-        your apps. Free. Open Source.
-      </p>
-    </div>
-    <div class="flex gap-4">
-      <a
-        href="https://ui.shadcn.com"
-        target="_blank"
-        rel="noreferrer"
-        class={buttonVariants()}
-      >
-        Documentation
+    <div class="flex max-w-[980px] flex-col items-start gap-4">
+      <a href="/brutalist" class={buttonVariants({})}>
+        Switch to Brutalist
       </a>
-      <a
-        href="https://github.com/AREA44/astro-shadcn-ui-template"
-        target="_blank"
-        rel="noreferrer"
-        class={buttonVariants({ variant: 'outline' })}
-      >
-        GitHub
-      </a>
+      <Content variant="polished" />
     </div>
   </section>
 </BaseLayout>

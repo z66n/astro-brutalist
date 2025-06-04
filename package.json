@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "astro build",
-    "dev": "astro dev",
+    "dev": "astro dev --port $PORT",
     "preview": "astro preview",
     "start": "astro dev",
     "format": "biome format --write ."

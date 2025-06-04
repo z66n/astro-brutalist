@@ -1,0 +1,99 @@
+/* Base resets */
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 2rem;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* BRUTALIST */
+  .brutalist {
+    background: #fff;
+    color: #000;
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+  }
+  .brutalist h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-bottom: 4px double black;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .brutalist button {
+    background: none;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .brutalist img {
+    max-width: 100%;
+    border: 4px solid black;
+    display: block;
+    margin-top: 1rem;
+  }
+  .brutalist hr {
+    border: none;
+    border-top: 3px dashed black;
+    margin: 2rem 0;
+  }
+  .brutalist a {
+    color: black;
+    background: yellow;
+    text-decoration: underline;
+    padding: 0 0.25rem;
+  }
+  .brutalist a:hover {
+    background: black;
+    color: white;
+  }
+  /* Brutalist fake form */
+  .brutalist form {
+    background: white;
+    border: 4px double black;
+    padding: 1rem;
+    max-width: 400px;
+    margin-top: 1rem;
+  }
+  .brutalist input[type="email"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid black;
+    background: transparent;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+  }
+  .brutalist button[type="submit"] {
+    background: black;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  /* Brutalist ad block */
+  .brutalist-ad {
+    background: yellow;
+    color: black;
+    border: 5px solid black;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-family: 'Courier New', monospace;
+  }
+  .brutalist-ad a {
+    background: black;
+    color: yellow;
+    padding: 0.2rem 0.4rem;
+    text-decoration: none;
+  }
+  .brutalist-ad a:hover {
+    color: black;
+    background: white;
+  }
+  
