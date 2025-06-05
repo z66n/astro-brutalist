@@ -1,5 +1,9 @@
 # Astro Shadcn UI Template
 
+[![Open in Firebase Studio](https://cdn.firebasestudio.dev/btn/open_dark_32.svg)](https://studio.firebase.google.com/import?url=https://github.com/z66n/astro-brutalist) 
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/z66n/astro-brutalist)
+
 This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI.
 
 ## Getting Started
