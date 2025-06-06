@@ -34,6 +34,7 @@
           env = {
             # Environment variables to set for your server
             PORT = "$PORT";
+            DEPLOY_TARGET = "firebase";
           };
         };
       };
