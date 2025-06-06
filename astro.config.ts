@@ -2,8 +2,11 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
 import tailwindcss from "@tailwindcss/vite";
-
 import cloudflare from "@astrojs/cloudflare";
+
+// Read deploy target from env
+const isFirebase =
+  process.env.DEPLOY_TARGET === "firebase" || !!process.env.PORT;
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,18 +16,26 @@ export default defineConfig({
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
-    resolve: {
-      alias: {
-        'react-dom/server.browser': 'react-dom/server', // Fix MessageChannel issue
-        'react-dom/server.node': 'react-dom/server', // <-- ADD THIS TOO
-        'react-dom/server': 'react-dom/server',       // <-- REINFORCE fallback
-      },
-    },
+    ...(isFirebase
+      ? {}
+      : {
+          resolve: {
+            alias: {
+              'react-dom/server.browser': 'react-dom/server',
+              'react-dom/server.node': 'react-dom/server',
+              'react-dom/server': 'react-dom/server',
+            },
+          },
+        }),
   },
-  output: "server",
-  adapter: cloudflare({
-    platformProxy: {
-      enabled: true,
-    },
-  }),
+  ...(isFirebase
+    ? {}
+    : {
+        output: "server",
+        adapter: cloudflare({
+          platformProxy: {
+            enabled: true,
+          },
+        }),
+      }),
 });

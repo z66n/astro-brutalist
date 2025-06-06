@@ -7,15 +7,16 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "astro dev --port $PORT",
+    "build": "astro build",
+    "dev": "DEPLOY_TARGET=firebase astro dev --port $PORT",
+    "preview": "astro preview",
     "start": "astro dev",
     "format": "biome format --write .",
     "astro": "astro",
-    "build": "astro build",
     "cf-typegen": "wrangler types",
     "check": "astro build && tsc && wrangler deploy --dry-run",
     "deploy": "wrangler deploy",
-    "preview": "astro build && wrangler dev"
+    "preview.cf": "astro build && wrangler dev"
   },
   "cloudflare": {
     "label": "Astro Framework Starter",
